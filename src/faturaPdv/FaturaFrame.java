@@ -315,14 +315,11 @@ public class FaturaFrame implements ActionListener {
 
         total.setText(String.format("%.2f", soma));
 
-//        if (concluir.is()) {
-//
-//        }
-
         pedidoConcluido.setText("Olá, seu pedido é o nº " + pedido.getText() + "\n"
                 + "\nNome: " + cliente.getText() + "\nTotal a pagar: R$ "
                 + total.getText());
 
+        //Falta o uso dos 3 botões de baixo
 
     }
 
