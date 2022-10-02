@@ -24,21 +24,21 @@ public class FaturaFrame implements ActionListener {
 
     JLabel Pedido = new JLabel();
     JLabel Cliente = new JLabel();
-    JLabel Valor = new JLabel();
+    JLabel Pizza = new JLabel();
     JLabel Refrigerante = new JLabel();
-    JLabel Cobertura = new JLabel();
+    JLabel Borda = new JLabel();
     JLabel Total = new JLabel();
     JLabel tipoProdutoTitulo = new JLabel();
-    JLabel tipoCoberturaTitulo = new JLabel();
+    JLabel tipoBordaTitulo = new JLabel();
     JLabel pedidoConcluidoTitulo = new JLabel();
     JLabel tipoRefrigerante = new JLabel();
 
     JTextField boasVindas = new JTextField();
     JTextField pedido = new JTextField();
     JTextField cliente = new JTextField();
-    JTextField valor = new JTextField();
+    JTextField valorPizza = new JTextField();
     JTextField refrigerante = new JTextField();
-    JTextField cobertura = new JTextField();
+    JTextField borda = new JTextField();
     JTextField total = new JTextField();
 
     JTextPane pedidoConcluido = new JTextPane();
@@ -105,6 +105,7 @@ public class FaturaFrame implements ActionListener {
         concluir.setText("Concluir");
         concluir.isSelected();
         concluir.setVisible(true);
+        concluir.addActionListener(this);
 
         enviar.setBounds(290, 710, 120, 30);
         enviar.setText("Enviar fatura");
@@ -114,6 +115,7 @@ public class FaturaFrame implements ActionListener {
         novoPedido.setBounds(500, 710, 120, 30);
         novoPedido.setText("Novo pedido");
         novoPedido.isSelected();
+        novoPedido.addActionListener(this);
         novoPedido.setVisible(true);
 
         //PEDIDO JLabel
@@ -127,7 +129,8 @@ public class FaturaFrame implements ActionListener {
         pedido.setBounds(150, 135, 100, 30);
         pedido.setBackground(new Color(255, 255, 255));
         pedido.setFont(new Font(" ", Font.PLAIN, 18));
-        pedido.setText("");
+        pedido.setEnabled(false);
+        pedido.setText("1");
         pedido.setVisible(true);
 
         //REFRIGERANTE JLabel
@@ -156,30 +159,30 @@ public class FaturaFrame implements ActionListener {
         cliente.setVisible(true);
 
         //descrição da "borda" JLabel
-        Cobertura.setBounds(350, 100, 100, 100);
-        Cobertura.setFont(new Font(" ", Font.PLAIN, 18));
-        Cobertura.setText("Borda");
-        Cobertura.setVisible(true);
+        Borda.setBounds(350, 100, 100, 100);
+        Borda.setFont(new Font(" ", Font.PLAIN, 18));
+        Borda.setText("Borda");
+        Borda.setVisible(true);
 
         //caixa do valor borda JTextField
-        cobertura.setBounds(450, 135, 100, 30);
-        cobertura.setBackground(new Color(255, 255, 255));
-        cobertura.setFont(new Font(" ", Font.PLAIN, 18));
-        cobertura.setEnabled(false);
-        cobertura.setVisible(true);
+        borda.setBounds(450, 135, 100, 30);
+        borda.setBackground(new Color(255, 255, 255));
+        borda.setFont(new Font(" ", Font.PLAIN, 18));
+        borda.setEnabled(false);
+        borda.setVisible(true);
 
         //VALOR DO PRODUTO (Título) JLabel
-        Valor.setBounds(50, 200, 300, 100);
-        Valor.setFont(new Font(" ", Font.PLAIN, 18));
-        Valor.setText("Pizza");
-        Valor.setVisible(true);
+        Pizza.setBounds(50, 200, 300, 100);
+        Pizza.setFont(new Font(" ", Font.PLAIN, 18));
+        Pizza.setText("Pizza");
+        Pizza.setVisible(true);
 
         //caixa do valor da pizza JTextField
-        valor.setBounds(150, 235, 100, 30);
-        valor.setBackground(new Color(255, 255, 255));
-        valor.setFont(new Font(" ", Font.PLAIN, 18));
-        valor.setVisible(true);
-        valor.setEnabled(false);
+        valorPizza.setBounds(150, 235, 100, 30);
+        valorPizza.setBackground(new Color(255, 255, 255));
+        valorPizza.setFont(new Font(" ", Font.PLAIN, 18));
+        valorPizza.setVisible(true);
+        valorPizza.setEnabled(false);
 
         //TOTAL titulo JLabel
         Total.setBounds(350, 200, 100, 100);
@@ -200,12 +203,12 @@ public class FaturaFrame implements ActionListener {
         tipoProdutoTitulo.setText("SABOR DA PIZZA");
         tipoProdutoTitulo.setVisible(true);
 
-        //tipoCoberturaTitulo JLabel
-        tipoCoberturaTitulo.setBounds(260, 280, 150, 100);
-        tipoCoberturaTitulo.setBackground(new Color(50, 50, 50));
-        tipoCoberturaTitulo.setFont(new Font(" ", Font.BOLD, 16));
-        tipoCoberturaTitulo.setText("BORDA");
-        tipoCoberturaTitulo.setVisible(true);
+        //tipoBordaTitulo JLabel
+        tipoBordaTitulo.setBounds(260, 280, 150, 100);
+        tipoBordaTitulo.setBackground(new Color(50, 50, 50));
+        tipoBordaTitulo.setFont(new Font(" ", Font.BOLD, 16));
+        tipoBordaTitulo.setText("BORDA");
+        tipoBordaTitulo.setVisible(true);
 
         //tipoRefrigerante JLabel
         tipoRefrigerante.setBounds(460, 280, 150, 100);
@@ -230,18 +233,18 @@ public class FaturaFrame implements ActionListener {
         pizzariaFrame.add(boasVindas);
         pizzariaFrame.add(Cliente);
         pizzariaFrame.add(Pedido);
-        pizzariaFrame.add(Valor);
+        pizzariaFrame.add(Pizza);
         pizzariaFrame.add(Refrigerante);
-        pizzariaFrame.add(Cobertura);
+        pizzariaFrame.add(Borda);
         pizzariaFrame.add(Total);
         pizzariaFrame.add(pedido);
         pizzariaFrame.add(refrigerante);
         pizzariaFrame.add(cliente);
-        pizzariaFrame.add(valor);
-        pizzariaFrame.add(cobertura);
+        pizzariaFrame.add(valorPizza);
+        pizzariaFrame.add(borda);
         pizzariaFrame.add(total);
         pizzariaFrame.add(tipoProdutoTitulo);
-        pizzariaFrame.add(tipoCoberturaTitulo);
+        pizzariaFrame.add(tipoBordaTitulo);
         pizzariaFrame.add(tipoRefrigerante);
         pizzariaFrame.add(pedidoConcluido);
         pizzariaFrame.add(pedidoConcluidoTitulo);
@@ -266,64 +269,94 @@ public class FaturaFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if (Objects.equals(e.getActionCommand(), "Calabresa")) {
-            valor.setText("35.00");
+            valorPizza.setText("35.00");
             portuguesa.setSelected(false);
             frangoCatupiry.setSelected(false);
-        } else if (Objects.equals(e.getActionCommand(), "Portuguesa")) {
-            valor.setText("45.00");
+        }
+        if (Objects.equals(e.getActionCommand(), "Portuguesa")) {
+            valorPizza.setText("45.00");
             calabresa.setSelected(false);
             frangoCatupiry.setSelected(false);
-        } else if (Objects.equals(e.getActionCommand(), "Frango Catupiry")) {
-            valor.setText("55.00");
+        }
+        if (Objects.equals(e.getActionCommand(), "Frango Catupiry")) {
+            valorPizza.setText("55.00");
             portuguesa.setSelected(false);
             calabresa.setSelected(false);
         }
 
         if (Objects.equals(e.getActionCommand(), "Catupiry")) {
-            cobertura.setText("17.00");
+            borda.setText("17.00");
             cheddar.setSelected(false);
             creamCheese.setSelected(false);
-        } else if (Objects.equals(e.getActionCommand(), "Cheddar")) {
-            cobertura.setText("19.00");
+        }
+        if (Objects.equals(e.getActionCommand(), "Cheddar")) {
+            borda.setText("19.00");
             catupiry.setSelected(false);
             creamCheese.setSelected(false);
-        } else if (Objects.equals(e.getActionCommand(), "Cream cheese")) {
-            cobertura.setText("21.00");
+        }
+        if (Objects.equals(e.getActionCommand(), "Cream cheese")) {
+            borda.setText("21.00");
             cheddar.setSelected(false);
             catupiry.setSelected(false);
         }
+
 
         if (Objects.equals(e.getActionCommand(), "2 Litros")) {
             refrigerante.setText("9.00");
             refrigerante1L.setSelected(false);
             refrigerante500ml.setSelected(false);
-        } else if (Objects.equals(e.getActionCommand(), "1 Litro")) {
+        }
+        if (Objects.equals(e.getActionCommand(), "1 Litro")) {
             refrigerante.setText("7.00");
             refrigerante2L.setSelected(false);
             refrigerante500ml.setSelected(false);
-        } else if (Objects.equals(e.getActionCommand(), "500 ml")) {
+        }
+        if (Objects.equals(e.getActionCommand(), "500 ml")) {
             refrigerante.setText("5.00");
             refrigerante2L.setSelected(false);
             refrigerante1L.setSelected(false);
         }
 
-        double valor1 = Double.parseDouble(valor.getText());
-        double valor2 = Double.parseDouble(cobertura.getText());
-        double valor3 = Double.parseDouble(refrigerante.getText());
+
+        double valor1 = valorPizza.getText() != null && !valorPizza.getText().isEmpty() ? Double.parseDouble(valorPizza.getText()) : 0;
+        double valor2 = borda.getText() != null && !borda.getText().isEmpty() ? Double.parseDouble(borda.getText()) : 0;
+        double valor3 = refrigerante.getText() != null && !refrigerante.getText().isEmpty() ? Double.parseDouble(refrigerante.getText()) : 0;
 
         double soma = (valor1 + valor2 + valor3);
 
+
         total.setText(String.format("%.2f", soma));
 
-//        if (concluir.is()) {
-//
-//        }
+        if (Objects.equals(e.getActionCommand(), "Concluir")) {
+            pedidoConcluido.setText("Olá, seu pedido é o nº " + pedido.getText()
+                    + "\nNome: " + cliente.getText() + "\nTotal a pagar: R$ "
+                    + total.getText());
 
-        pedidoConcluido.setText("Olá, seu pedido é o nº " + pedido.getText() + "\n"
-                + "\nNome: " + cliente.getText() + "\nTotal a pagar: R$ "
-                + total.getText());
 
+            zerarFatura();
+        }
+
+        if (Objects.equals(e.getActionCommand(), "Novo pedido")) {
+            pedido.setText(String.valueOf(Integer.parseInt(pedido.getText())+1));
+            pedidoConcluido.setText("");
+        }
 
     }
 
+    public void zerarFatura() {
+        cliente.setText("");
+        valorPizza.setText("");
+        borda.setText("");
+        refrigerante.setText("");
+        total.setText("");
+        calabresa.setSelected(false);
+        portuguesa.setSelected(false);
+        frangoCatupiry.setSelected(false);
+        catupiry.setSelected(false);
+        cheddar.setSelected(false);
+        creamCheese.setSelected(false);
+        refrigerante2L.setSelected(false);
+        refrigerante1L.setSelected(false);
+        refrigerante500ml.setSelected(false);
+    }
 }
